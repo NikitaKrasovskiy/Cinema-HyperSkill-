@@ -29,4 +29,8 @@ public class Controller {
     public int getAllCostSeats() {
         return cinema.calculatesAllCost();
     }
+
+    public int getChooseMenu() {
+        return scanner.nextInt();
+    }
 }

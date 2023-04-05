@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class CinemaView {
     int row;
     int seats;
@@ -10,13 +12,32 @@ public class CinemaView {
         inicilizationCinemaView();
     }
 
+    public void printMenu() {
+        System.out.println("\n1. Show the seats");
+        System.out.println("2. Buy a ticket");
+        System.out.println("0. Exit");
+    }
+
+    public void menuCinema() {
+        while (true) {
+            printMenu();
+            int chooseUser = controller.getChooseMenu();
+            switch (chooseUser) {
+                case 0:
+                    return;
+                case 1:
+                    printCinemaRoom();
+                   break;
+                case 2:
+                    printCostOnePlace();
+                    takeSeats();
+                   break;
+            }
+        }
+    }
     public void inicilizationCinemaView() {
         cinemaRoom = fillsCinemaHollSeats();
-        printCinemaRoom();
-
-        printCostOnePlace();
-        takeSeats();
-        printCinemaRoom();
+        menuCinema();
     }
         private void printCinemaRoom() {
         System.out.println("\nCinema:");

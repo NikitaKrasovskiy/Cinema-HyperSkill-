@@ -3,6 +3,12 @@ public class Cinema {
     int seats;
     int sumSeats;
 
+//    int countTickets;
+
+    int proceeds;
+
+    int cost;
+
     public Cinema(int row, int seats) {
         this.row = row;
         this.seats = seats;
@@ -16,6 +22,7 @@ public class Cinema {
         return sumSeats * 10;
     }
     public int calculateCostPlaceCinema(int seatRow, int seatNumber) {
+//        countTickets += 1;
      int costPlace;
      int middle = row / 2;
         if (sumSeats <= 60) {
@@ -28,8 +35,13 @@ public class Cinema {
                 costPlace = 8;
             }
         }
+        proceeds += costPlace;
         return costPlace;
     }
+
+//    public double getInterestTickets() {
+//        return (double) countTickets * 100 / sumSeats;
+//    }
 
     public int getRow() {
         return row;
@@ -53,5 +65,29 @@ public class Cinema {
 
     public void setSumSeats(int sumSeats) {
         this.sumSeats = sumSeats;
+    }
+
+//    public int getCountTickets() {
+//        return countTickets;
+//    }
+//
+//    public void setCountTickets(int countTickets) {
+//        this.countTickets = countTickets;
+//    }
+
+    public int getProceeds() {
+        return proceeds;
+    }
+
+    public void setProceeds(int proceeds) {
+        this.proceeds = proceeds;
+    }
+
+    public int getCost() {
+        return cost;
+    }
+
+    public void setCost(int cost) {
+        this.cost = cost;
     }
 }
